@@ -1,0 +1,24 @@
+package calendar;
+
+import java.util.Calendar;
+
+public class Main06 {
+
+	public static void main(String[] args) {
+
+//		8월달 달력 만들기
+		
+		Calendar cal = Calendar.getInstance();
+		
+		int[][] a = new int[5][7];
+		
+		for(int i = 0 ; i < a.length ; i++) {
+			
+			for(int j = 0 ; j < a[i].length ; j ++) {
+				System.out.print(j);
+			}
+			System.out.println();
+		}
+	}
+
+}

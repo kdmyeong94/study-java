@@ -1,0 +1,5 @@
+package patterncheck;
+
+public class RegexHelper {
+
+}

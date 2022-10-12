@@ -1,0 +1,87 @@
+package project;
+//
+//public class TestMain {
+//
+//	public static void main(String[] args) {
+//
+//		CosmeticWomen cos = new CosmeticWomen();
+//
+//		
+////		String a = "1,2,3";
+////		
+////		System.out.println(a.indexOf("1"));
+////		System.out.println(a.indexOf("4"));
+////		System.out.println(a.contains("1"));
+////		CosmeticOldWomen cos = new CosmeticOldWomen();
+////		CosmeticOldMen cos2 = new CosmeticOldMen();
+////		String a = "";
+////		String b = "";
+////		for(int i = 1 ; i <= 2 ; i++) {
+////			a = "cos" + i;
+////			System.out.println(a.cream1(1));
+////		}
+//		
+//		
+//	}
+//
+//}
+import java.util.ArrayList;
+ 
+public class TestMain {
+ 
+    public static void main(String[] args) {
+ 
+        String text = "- 아이유 : https://www.melon.com/artist/timeline.htm?artistId=261143   "
+                + "- 블랙핑크 : https://www.melon.com/artist/timeline.htm?artistId=995169";
+        String tmpText = text; //원본을 저장
+ 
+        int start = text.indexOf("http"); //http문자열 위치
+        int space = 0; //공백 위치
+ 
+        String bodyText = "";
+        String tailText = "";
+ 
+        boolean check = false;
+ 
+        ArrayList<String> urlList = new ArrayList<String>();
+ 
+        if(start>=0) { //http가 존재한다면 true를 입력
+            check = true;                
+        }
+ 
+        while(check) { //http가 존재한다면 실행
+            bodyText = text.substring(start); //http부터 문자열 자름
+ 
+            space = bodyText.indexOf(" "); //자른 문자열에서 공백위치 확인
+ 
+            if(space>0) { //공백이 존재한다면
+                tailText = bodyText.substring(space); //공백 뒤 문자열 저장
+                bodyText = bodyText.substring(0,space); //http 주소부분만 잘라서 tailText 부분에 입력
+            }else {
+                tailText = ""; //공백이 없으니 뒤 문자열이 없음
+            }
+ 
+            urlList.add(bodyText); //http 주소를 ArrayList에 저장
+ 
+            start = tailText.indexOf("http"); //뒤에 http 주소가 존재하는지 확인
+            if(start>=0) {
+                check = true;
+                text = tailText; //존재한다면 뒷부분을 text에 입력
+            }else {
+                check = false;
+            }
+ 
+        }
+ 
+        for(String url : urlList) { //ArrayList에 넣었던 http주소를 for문으로 실행
+            //tmpText 문자열에서 url부분 찾아서 머리+몸통(href추가)+꼬리 만들어서 href가 삽입된 문자열 완성
+            tmpText = tmpText.substring(0, tmpText.indexOf(url)) //머리
+                    +"<a href=\""+url+"\" target=\"_blank\">"+url+"</a>" //몸통
+                    +tmpText.substring(tmpText.indexOf(url)+url.length()); //꼬리
+        }
+ 
+        System.out.println(tmpText);
+ 
+    }
+ 
+}

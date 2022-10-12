@@ -1,0 +1,18 @@
+package project;
+
+public class TestMain {
+
+	public static void main(String[] args) {
+
+		CosmeticWomen cos = new CosmeticWomen();
+
+		
+		String a = "1,2,3";
+		
+		System.out.println(a.indexOf("1"));
+		System.out.println(a.indexOf("1"));
+		System.out.println(a.contains("1"));
+		
+	}
+
+}

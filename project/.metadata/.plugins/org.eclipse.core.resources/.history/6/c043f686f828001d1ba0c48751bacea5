@@ -1,0 +1,504 @@
+package project;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		/*
+		 * 성별과 생년월일을 입력받아서 해당 데이터 불러오기
+		 * 
+		 * 연령별 피부고민 선택 (청소년 > 보습 / men,women > 보습,트러블,안티에이징 / old men, women > 보습, 안티에이징
+		 *  
+		 * 사용하고자 하는 단계 
+		 * Child 	: 1토너 2로션
+		 * Men  	: 1토너 2로션 3올인원
+		 * OldMen	: 1토너 2로션 3올인원
+		 * Women 	: 1토너 4에센스 2로션 5크림
+		 * OldWomen	: 1토너 4에센스 2로션 5크림
+		 */
+		CosmeticWomen cosW = new CosmeticWomen();
+		CosmeticMen cosM = new CosmeticMen();
+		CosmeticOldWomen cosOW = new CosmeticOldWomen();
+		CosmeticOldMen cosOM = new CosmeticOldMen();
+		CosmeticChild cosC = new CosmeticChild();
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int gen = 0;
+		int age = 0;
+		System.out.println("안녕하세요. 생년월일과 성별을 입력해주세요.");
+		while (true) {
+			System.out.print("생년월일 (ex: 940511) : "); // 현재나이로 받아도 되지만 추출을 사용하기위해 생년월일로 받기
+			String birth = sc.next();
+			String yy = birth.substring(0,2);
+			int y = Integer.parseInt(yy);
+			if ( y >= 23 && y <= 24 ) {
+				System.out.println("다시 입력해주세요");
+			} else if (y <23 && y >= 03) {
+				age = 1;
+				break;
+			} else if (y <= 02 || y > 82) {
+				age = 2;
+				break;
+			} else if (y <= 82 && y > 24) {
+				age = 3;
+				break;
+			} 
+		} // age 입력 while
+		
+		System.out.println();
+		
+		while (true) {
+			System.out.print("성별 (ex: 남자) : ");
+			String gen2 = sc.next();
+			if (gen2.contains("남자")) {
+				gen = 1;
+				break;
+			} else if (gen2.contains("여자")) {
+				gen = 2;
+				break;
+			} else {
+				System.out.println("다시 입력해주세요");
+			}
+		} // gen 입력 while
+
+		String skintype = ""; // 수를 입력받기 위한 변수 
+		int dry = 0;       
+		int trouble = 0; 
+		int antiAge = 0;
+		
+		while (true) {  // 피부 고민을 받는 단계
+			System.out.println();
+			if ((age == 2 && gen == 2) || (age == 2 && gen == 1)) { // women // men
+				System.out.println("피부 고민을 순서대로 선택해주세요. ex) 12 / 13 / 123 ");
+				System.out.println("1.보습	2.트러블	 3.안티에이징");
+				skintype = sc.next();
+				if (skintype.contains("1")) {
+					dry = 1;
+				} 
+				if(skintype.contains("2")) {
+					trouble = 1;
+				} 
+				if(skintype.contains("3")) {
+					antiAge = 1;
+				}
+			} else if ((age == 3 && gen == 2) || (age == 3 && gen == 1)) { // oldwomen, oldmen
+				System.out.println("피부 고민을 순서대로 선택해주세요. ex) 12 / 13 / 123 ");
+				System.out.println("1.보습	2.안티에이징");
+				skintype = sc.next();
+				if (skintype.contains("1")) {
+					dry = 1;
+				} 
+				if(skintype.contains("2")) {
+					antiAge = 1;
+				}
+			} else {
+				break;
+			}
+			break;
+		}  // 피부 고민 선택
+		
+		int cosmetic_type = 0;  //( 토너 : 1 , 로션 : 2, 올인원 : 3, 에센스 :4 , 크림 : 5
+		int dryPoint = 0;
+		int troublePoint = 0;
+		int antiPoint = 0;
+		
+		
+//		------------------------------------------청소년-------------------------------
+		while (age == 1) {
+			while (true) {
+				System.out.println("어떤 화장품을 찾으시나요? (해당 번호를 하나만 입력하세요)");
+				System.out.println(" 1번 : 토너 \n 2번 : 로션");
+				String cos = sc.next();
+				if (cos.contains("1")) {
+					System.out.println("토너를 추천해 드릴게요.");
+					cosmetic_type = 1;
+					break;
+				} 
+				if (cos.contains("2")) {
+					System.out.println("로션을 추천해 드릴게요.");
+					cosmetic_type = 2;
+					break;
+				} else {
+					System.out.println("다시 입력해주세요.");
+				}
+			}
+			while(true) {
+				System.out.println("피부 건조함을 입력해주세요.\n 1(건조함)<< 정도 >>(건조하지않음)5");
+				int iDry = sc.nextInt();
+				if(iDry <= 5 && iDry >= 1) {
+					dryPoint = iDry;
+					break;
+				} else { System.out.println("다시 입력해주세요");}
+			}
+			if(dryPoint == 1 && cosmetic_type == 1) {        // 청소년 토너
+				System.out.println("추천될 토너는 " + cosC.toner(dryPoint) + "입니다.");
+			} else if (dryPoint == 2 && cosmetic_type == 1) {
+				System.out.println("추천될 토너는 " + cosC.toner(dryPoint) + "입니다.");
+			} else if (dryPoint == 3 && cosmetic_type == 1) {
+				System.out.println("추천될 토너는 " + cosC.toner(dryPoint) + "입니다.");
+			} else if (dryPoint == 4 && cosmetic_type == 1) {
+				System.out.println("추천될 토너는 " + cosC.toner(dryPoint) + "입니다.");
+			} else if (dryPoint == 5 && cosmetic_type == 1) {
+				System.out.println("추천될 토너는 " + cosC.toner(dryPoint) + "입니다.");
+			} 
+			
+			if(dryPoint == 1 && cosmetic_type == 2) {		//청소년 로션
+				System.out.println("추천될 로션는 " + cosC.lotion(dryPoint) + "입니다.");
+			} else if (dryPoint == 2 && cosmetic_type == 2) {
+				System.out.println("추천될 로션는 " + cosC.lotion(dryPoint) + "입니다.");
+			} else if (dryPoint == 3 && cosmetic_type == 2) {
+				System.out.println("추천될 로션는 " + cosC.lotion(dryPoint) + "입니다.");
+			} else if (dryPoint == 4 && cosmetic_type == 2) {
+				System.out.println("추천될 로션는 " + cosC.lotion(dryPoint) + "입니다.");
+			} else if (dryPoint == 5 && cosmetic_type == 2) {
+				System.out.println("추천될 로션는 " + cosC.lotion(dryPoint) + "입니다.");
+			} 
+			break;
+		} // 청소년용
+		
+//		------------------------------------------men-------------------------------
+		
+		while (age == 2 && gen == 1) {
+			while (true) {
+				System.out.println("어떤 화장품을 찾으시나요? (해당 번호를 하나만 입력하세요)");
+				System.out.println(" 1번 : 토너 \n 2번 : 로션 \n 3번 : 올인원");
+				String cos = sc.next();
+				if (cos.contains("1")) {
+					System.out.println("토너를 추천해 드릴게요.");
+					cosmetic_type = 1;
+					break;
+				} else if (cos.contains("2")) {
+					System.out.println("로션을 추천해 드릴게요.");
+					cosmetic_type = 2;
+					break;
+				} else if (cos.contains("3")) {
+					System.out.println("올인원을 추천해 드릴게요.");
+					cosmetic_type = 3;
+					break;
+				} else {
+					System.out.println("다시 입력해주세요.");
+				}
+				break;
+			}
+			while (dry == 1) {
+				System.out.println("피부 건조함을 입력해주세요.\n 1(건조함)<< 정도 >>(건조하지않음)5");
+				int iDry = sc.nextInt();
+				if (iDry <= 5 && iDry >= 1) {
+					dryPoint = iDry;
+				} else {
+					System.out.println("다시 입력해주세요");
+				}
+				break;
+			}
+			while (trouble == 1) {
+				System.out.println("피부 트러블을 입력해주세요.\n 1(트러블 적음)<< 정도 >>(트러블 많음)5");
+				int iTrouble = sc.nextInt();
+				if (iTrouble <= 5 && iTrouble >= 1) {
+					troublePoint = iTrouble;
+				} else {
+					System.out.println("다시 입력해주세요");
+				}
+				break;
+			}
+			while (antiAge == 1) {
+				System.out.println("주름 상태을 입력해주세요.\n 1(적음)<< 정도 >>(많음)5");
+				int iAnti = sc.nextInt();
+				if (iAnti <= 5 && iAnti >= 1) {
+					antiPoint = iAnti;
+				} else {
+					System.out.println("다시 입력해주세요");
+				}
+				break;
+			}
+
+			while (cosmetic_type == 1) { // -----------토너
+				while (true) {
+					if (dryPoint == 1) {
+						System.out.println("추천될 토너는 " + cosM.toner1(dryPoint) + "입니다.");
+					} else if (dryPoint == 2) {
+						System.out.println("추천될 토너는 " + cosM.toner1(dryPoint) + "입니다.");
+					} else if (dryPoint == 3) {
+						System.out.println("추천될 토너는 " + cosM.toner1(dryPoint) + "입니다.");
+					} else if (dryPoint == 4) {
+						System.out.println("추천될 토너는 " + cosM.toner1(dryPoint) + "입니다.");
+					} else if (dryPoint == 5) {
+						System.out.println("추천될 토너는 " + cosM.toner1(dryPoint) + "입니다.");
+					}
+					break;
+				}
+
+				while (true) {
+					if (troublePoint == 1) { // 토너
+						System.out.println("추천될 토너는 " + cosM.toner2(troublePoint) + "입니다.");
+					} else if (troublePoint == 2) {
+						System.out.println("추천될 토너는 " + cosM.toner2(troublePoint) + "입니다.");
+					} else if (troublePoint == 3) {
+						System.out.println("추천될 토너는 " + cosM.toner2(troublePoint) + "입니다.");
+					} else if (troublePoint == 4) {
+						System.out.println("추천될 토너는 " + cosM.toner2(troublePoint) + "입니다.");
+					} else if (troublePoint == 5) {
+						System.out.println("추천될 토너는 " + cosM.toner2(troublePoint) + "입니다.");
+					}
+					break;
+				}
+
+				while (true) {
+					if (antiPoint == 1) { // 토너
+						System.out.println("추천될 토너는 " + cosM.toner3(antiPoint) + "입니다.");
+					} else if (antiPoint == 2) {
+						System.out.println("추천될 토너는 " + cosM.toner3(antiPoint) + "입니다.");
+					} else if (antiPoint == 3) {
+						System.out.println("추천될 토너는 " + cosM.toner3(antiPoint) + "입니다.");
+					} else if (antiPoint == 4) {
+						System.out.println("추천될 토너는 " + cosM.toner3(antiPoint) + "입니다.");
+					} else if (antiPoint == 5) {
+						System.out.println("추천될 토너는 " + cosM.toner3(antiPoint) + "입니다.");
+					}
+					break;
+				}
+				break;
+			}
+
+			while (cosmetic_type == 2) { // -----------로션
+				while (true) {
+					if (dryPoint == 1) {
+						System.out.println("추천될 로션은 " + cosM.lotion1(dryPoint) + "입니다.");
+					} else if (dryPoint == 2) {
+						System.out.println("추천될 로션은 " + cosM.lotion1(dryPoint) + "입니다.");
+					} else if (dryPoint == 3) {
+						System.out.println("추천될 로션은 " + cosM.lotion1(dryPoint) + "입니다.");
+					} else if (dryPoint == 4) {
+						System.out.println("추천될 로션은 " + cosM.lotion1(dryPoint) + "입니다.");
+					} else if (dryPoint == 5) {
+						System.out.println("추천될 로션은 " + cosM.lotion1(dryPoint) + "입니다.");
+					}
+					break;
+				}
+
+				while (true) {
+					if (troublePoint == 1) {
+						System.out.println("추천될 로션은 " + cosM.lotion2(troublePoint) + "입니다.");
+					} else if (troublePoint == 2) {
+						System.out.println("추천될 로션은 " + cosM.lotion2(troublePoint) + "입니다.");
+					} else if (troublePoint == 3) {
+						System.out.println("추천될 로션은 " + cosM.lotion2(troublePoint) + "입니다.");
+					} else if (troublePoint == 4) {
+						System.out.println("추천될 로션은 " + cosM.lotion2(troublePoint) + "입니다.");
+					} else if (troublePoint == 5) {
+						System.out.println("추천될 로션은 " + cosM.lotion2(troublePoint) + "입니다.");
+					}
+					break;
+				}
+
+				while (true) {
+					if (antiPoint == 1) {
+						System.out.println("추천될 로션은 " + cosM.lotion3(antiPoint) + "입니다.");
+					} else if (antiPoint == 2) {
+						System.out.println("추천될 로션은 " + cosM.lotion3(antiPoint) + "입니다.");
+					} else if (antiPoint == 3) {
+						System.out.println("추천될 로션은 " + cosM.lotion3(antiPoint) + "입니다.");
+					} else if (antiPoint == 4) {
+						System.out.println("추천될 로션은 " + cosM.lotion3(antiPoint) + "입니다.");
+					} else if (antiPoint == 5) {
+						System.out.println("추천될 로션은 " + cosM.lotion3(antiPoint) + "입니다.");
+					}
+					break;
+				}
+
+				break;
+			}
+
+			while (cosmetic_type == 3) { // ----------- 올인원
+				while (true) {
+					if (dryPoint == 1) {
+						System.out.println("추천될 올인원은 " + cosM.allInOne1(dryPoint) + "입니다.");
+					} else if (dryPoint == 2) {
+						System.out.println("추천될 올인원은 " + cosM.allInOne1(dryPoint) + "입니다.");
+					} else if (dryPoint == 3) {
+						System.out.println("추천될 올인원은 " + cosM.allInOne1(dryPoint) + "입니다.");
+					} else if (dryPoint == 4) {
+						System.out.println("추천될 올인원은 " + cosM.allInOne1(dryPoint) + "입니다.");
+					} else if (dryPoint == 5) {
+						System.out.println("추천될 올인원은 " + cosM.allInOne1(dryPoint) + "입니다.");
+					}
+					break;
+				}
+
+				while (true) {
+					if (troublePoint == 1) {
+						System.out.println("추천될 올인원은 " + cosM.allInOne2(troublePoint) + "입니다.");
+					} else if (troublePoint == 2) {
+						System.out.println("추천될 올인원은 " + cosM.allInOne2(troublePoint) + "입니다.");
+					} else if (troublePoint == 3) {
+						System.out.println("추천될 올인원은 " + cosM.allInOne2(troublePoint) + "입니다.");
+					} else if (troublePoint == 4) {
+						System.out.println("추천될 올인원은 " + cosM.allInOne2(troublePoint) + "입니다.");
+					} else if (troublePoint == 5) {
+						System.out.println("추천될 올인원은 " + cosM.allInOne2(troublePoint) + "입니다.");
+					}
+					break;
+				}
+
+				while (true) {
+					if (antiPoint == 1) {
+						System.out.println("추천될 올인원은 " + cosM.allInOne3(antiPoint) + "입니다.");
+					} else if (antiPoint == 2) {
+						System.out.println("추천될 올인원은 " + cosM.allInOne3(antiPoint) + "입니다.");
+					} else if (antiPoint == 3) {
+						System.out.println("추천될 올인원은 " + cosM.allInOne3(antiPoint) + "입니다.");
+					} else if (antiPoint == 4) {
+						System.out.println("추천될 올인원은 " + cosM.allInOne3(antiPoint) + "입니다.");
+					} else if (antiPoint == 5) {
+						System.out.println("추천될 올인원은 " + cosM.allInOne3(antiPoint) + "입니다.");
+					}
+					break;
+				}
+
+				break;
+			}
+			break;
+		} // men
+		
+		
+//		------------------------------------------oldmen------------------------------
+		
+		while (age == 3 && gen == 1) {
+			while (true) {
+				System.out.println("어떤 화장품을 찾으시나요? (해당 번호를 하나만 입력하세요)");
+				System.out.println(" 1번 : 토너 \n 2번 : 로션 \n 3번 : 올인원");
+				String cos = sc.next();
+				if (cos.contains("1")) {
+					System.out.println("토너를 추천해 드릴게요.");
+					cosmetic_type = 1;
+					break;
+				} else if (cos.contains("2")) {
+					System.out.println("로션을 추천해 드릴게요.");
+					cosmetic_type = 2;
+					break;
+				} else if (cos.contains("3")) {
+					System.out.println("올인원을 추천해 드릴게요.");
+					cosmetic_type = 3;
+					break;
+				} else {
+					System.out.println("다시 입력해주세요.");
+				}
+				break;
+			}
+		
+		
+		
+//		------------------------------------------women------------------------------
+		
+		while (age == 2 && gen == 2) {
+			while (true) {
+				System.out.println("어떤 화장품을 찾으시나요? (해당 번호를 하나만 입력하세요)");
+				System.out.println(" 1번 : 토너 \n 2번 : 에센스 \n 3번 : 로션  \n 4번 : 크림");
+				String cos = sc.next();
+				if (cos.contains("1")) {
+					System.out.println("토너를 추천해 드릴게요.");
+					cosmetic_type = 1;
+					break;
+				} else if (cos.contains("2")) {
+					System.out.println("에센스를 추천해 드릴게요.");
+					cosmetic_type = 4;
+					break;
+				} else if (cos.contains("3")) {
+					System.out.println("로션을 추천해 드릴게요.");
+					cosmetic_type = 2;
+					break;
+				} else if (cos.contains("4")) {
+					System.out.println("크림을 추천해 드릴게요.");
+					cosmetic_type = 5;
+					break;
+				} else {
+					System.out.println("다시 입력해주세요.");
+				}
+				break;
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		} // women
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+//		while (true) {
+//			System.out.println("어떤 화장품을 찾으시나요? ( 해당 번호를 입력하세요)");
+//			System.out.println(" 1번 : 토너 \n 2번 : 에센스\n 3번 : 로션");
+//			int choice = sc.nextInt();
+//			if (choice == 1) {System.out.println("토너를 추천해 드릴게요");choice_result = 1;	break;}
+//			else if (choice == 2) {System.out.println("에센스를 추천해 드릴게요");	choice_result = 2;break;}
+//			else if (choice == 3) {System.out.println("크림을 추천해 드릴게요");	choice_result = 3;break;}
+//			
+//			else {System.out.println("다시 입력해주세요.");}
+//			
+			
+//		} // step choice
+//		
+//		
+//		
+//		int dryPoint = 0;
+//		while ( choice_result == 1 || choice_result == 2 || choice_result == 3) {
+//			System.out.println("피부 건조함을 입력해주세요.\n 1(건조함)<< 정도 >>(건조하지않음)5");
+//			int dry = sc.nextInt();
+//			if ( dry <= 5 && dry >= 1) {
+//				dryPoint = dry;
+//				break;
+//			} else {
+//				System.out.println("다시 입력해주세요.");
+//			}
+//		} // dry point
+//		
+//		if(choice_result == 1) {
+//			System.out.println(cos.toner(dryPoint));
+//		} else if (choice_result == 2) {
+//			System.out.println(cos.essence(dryPoint));
+//		} else if (choice_result == 3) {
+//			System.out.println(cos.lotion(dryPoint));
+//		}
+////		
+//		point[1] = 0;
+//		while ( choice_result == 1 || choice_result == 2 || choice_result == 3) {
+//			System.out.println("피부 트러블정도를 입력해주세요.\n 1(없음)<< 정도 >>(심함)5");
+//			int trouble = sc.nextInt();
+//			if (trouble <= 5 && trouble >= 1) {
+//				point[1] = trouble;
+//				break;
+//			} else { 
+//				System.out.println("다시 입력해주세요.");
+//			}
+//		} // trouble point 
+		
+//		int totalPoint = 0;
+//		for(int i = 0 ; i <point.length ; i++) {
+//			totalPoint += point[i];
+//		}
+//		System.out.println(totalPoint);
+	}  //main
+
+} //class

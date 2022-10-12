@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;multiex&apos; to &apos;day04/src&apos;&#x0D;&#x0A;- Original project: &apos;day03&apos;&#x0D;&#x0A;- Destination element: &apos;day04/src&apos;&#x0D;&#x0A;- Original element: &apos;day03/src/multiex&apos;" description="Copy package" destination="=day04/src" element1="/src&lt;multiex" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1660004635087" version="1.0"/>
+</session>

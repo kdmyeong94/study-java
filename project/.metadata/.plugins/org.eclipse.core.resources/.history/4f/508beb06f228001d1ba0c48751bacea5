@@ -1,0 +1,27 @@
+package project;
+
+public class TestMain {
+
+	public static void main(String[] args) {
+
+		CosmeticWomen cos = new CosmeticWomen();
+
+		
+//		String a = "1,2,3";
+//		
+//		System.out.println(a.indexOf("1"));
+//		System.out.println(a.indexOf("4"));
+//		System.out.println(a.contains("1"));
+//		CosmeticOldWomen cos = new CosmeticOldWomen();
+//		CosmeticOldMen cos2 = new CosmeticOldMen();
+//		String a = "";
+//		String b = "";
+//		for(int i = 1 ; i <= 2 ; i++) {
+//			a = "cos" + i;
+//			System.out.println(a.cream1(1));
+//		}
+		
+		
+	}
+
+}
