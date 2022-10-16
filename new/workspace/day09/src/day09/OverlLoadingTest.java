@@ -1,0 +1,26 @@
+package day09;
+
+public class OverlLoadingTest {
+
+	public static void main(String[] args) {
+		OverlLoadingTest test = new OverlLoadingTest();
+		
+		System.out.println(test.add(1, 2));
+		System.out.println(test.add(1, 2, 3));
+		System.out.println(test.add(1.222, 3.444));
+		
+	}
+	
+	public int add(int a, int b) {
+		return a + b ;
+	}
+	
+	public double add(double a, double b) {
+		return a + b ;
+	}
+	
+	public int add(int a, int b, int c) {
+		return a + b + c;
+	}
+	
+}
