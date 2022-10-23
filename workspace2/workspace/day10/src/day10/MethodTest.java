@@ -11,8 +11,21 @@ public class MethodTest {
 		System.out.println("나이 : ");
 		int age = sc.nextInt();
 		
-		mt.isAdult(age);
+//		mt.isAdult(age);
 			
+		if(mt.isAdult(age)) {
+			System.out.println("성인입니다.");
+		} else {
+			System.out.println("미성년자입니다.");
+		}
+		
+		if (mt.isAdult(age)) {
+			System.out.println("담배는 현재 02년생부터 구입가능합니다.");
+		} else {
+			System.out.println("판매 가능한 나이입니다.");
+		}
+		
+	
 	}
 	
 	public void isAdult() {
