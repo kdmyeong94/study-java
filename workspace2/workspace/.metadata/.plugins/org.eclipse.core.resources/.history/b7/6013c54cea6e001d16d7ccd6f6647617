@@ -1,0 +1,20 @@
+package user;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+//		User u1 = new User("abc1234", "1234", 10, "김철수");
+//		User u2 = new User("abc12345", "5678", 15, "김영희");
+//		User u3 = new User("abc123456", "5555", 20, "홍길동");
+		
+//		User[] users = {u1,u2,u3};
+		
+		user[] users = {
+				new User("abc1234", "1234", 10, "김철수"),
+				new User("abc12345", "5678", 15, "김영희"),
+				new User("abc123456", "5555", 20, "홍길동")
+		};
+	
+	}
+}

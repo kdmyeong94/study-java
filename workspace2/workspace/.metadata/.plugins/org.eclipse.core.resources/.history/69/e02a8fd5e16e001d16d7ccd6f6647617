@@ -1,0 +1,9 @@
+package dto;
+
+public class Student {
+
+	private String name;
+	private int kor;
+	private int eng;
+		
+}

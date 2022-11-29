@@ -1,0 +1,18 @@
+package inheritance;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Car car = new Car("자동차", "검은색", 500);
+		SuperCar superCar = new SuperCar();
+		superCar.setName("슈퍼카");
+		superCar.setColor("빨간색");
+		superCar.setPrice(100000000);
+		
+		System.out.println(car.getName());
+		
+		
+		
+	}
+}

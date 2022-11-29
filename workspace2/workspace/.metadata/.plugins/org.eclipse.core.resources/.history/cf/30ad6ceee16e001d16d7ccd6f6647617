@@ -1,0 +1,12 @@
+package dto;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Student kim = new Student();
+		
+		kim.name = "김철수";
+	}
+
+}

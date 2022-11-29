@@ -1,0 +1,13 @@
+package inheritance;
+
+public class car {
+	
+	private String name;
+	private String color;
+	private int price;
+	
+	public car() {}
+	
+	
+	
+}

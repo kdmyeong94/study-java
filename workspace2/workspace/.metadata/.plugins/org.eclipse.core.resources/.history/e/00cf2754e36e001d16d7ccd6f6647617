@@ -1,0 +1,36 @@
+package dto;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Student kim = new Student();
+		Student park = new Student();
+		
+//		kim.name = "김철수";
+//		kim.kor	= 100;
+//		kim.eng = 50;
+//		
+//		park.name = "박영희";
+//		park.kor = 80;
+//		park.eng = 100;
+//		
+//		
+//		System.out.println(kim.name + " : " + kim.kor + " : " + kim.eng);
+//		System.out.println(park.name + " : " + park.kor + " : " + park.eng);
+		
+		kim.setName("김철수");
+		kim.setKor(100);
+		kim.setEng(50);
+				
+		park.setName("박영희");
+		park.setKor(80);
+		park.setEng(100);
+		
+		
+		System.out.println(kim.name + " : " + kim.kor + " : " + kim.eng);
+		System.out.println(park.name + " : " + park.kor + " : " + park.eng);
+		
+	}
+
+}

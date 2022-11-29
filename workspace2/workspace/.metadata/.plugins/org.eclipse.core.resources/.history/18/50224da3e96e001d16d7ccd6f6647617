@@ -1,0 +1,10 @@
+package user;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		User u1 = new User("abc1234", "1234", 10, "김철수");
+		
+	}
+}

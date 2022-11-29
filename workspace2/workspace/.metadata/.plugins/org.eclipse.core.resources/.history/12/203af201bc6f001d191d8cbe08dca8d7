@@ -1,0 +1,42 @@
+package inheritance;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+//		new Car();
+//		new SuperCar();
+		
+		Object obj = new Object();
+		obj.equals(obj); // Object 클래스에는 equals라는 메서드가 정의되어있다.
+		//즉, 자바의 모든 클래스는 이 equals라는 메서드를 상속받고있다.
+		
+//		Car car = new Car();
+//		car.equals(obj);
+		
+		Car car = new Car();
+		car.setName("자동차");
+		car.setColor("흰색");
+		car.setPrice(500);
+	
+		
+		SuperCar superCar = new SuperCar();
+		superCar.setName("슈퍼카");
+		superCar.setColor("빨간색");
+		superCar.setPrice(1000);
+		
+//		System.out.println(car.getName());
+//		
+//		car.go();
+//		car.engineOn();
+		car.show();
+//		car.setMode("스포츠카");
+		
+		System.out.println("-------------------------------");
+		
+//		superCar.go();
+//		superCar.engineOn();
+//		superCar.setMode("스포츠카");
+		superCar.show();
+	}
+}

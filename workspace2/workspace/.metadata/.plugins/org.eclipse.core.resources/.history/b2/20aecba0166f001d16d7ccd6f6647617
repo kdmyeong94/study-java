@@ -1,0 +1,10 @@
+package inheritance;
+
+public class SuperCar extends Car{
+
+	@Override // 어노테이션
+	public void engineOn() {
+		System.out.println("버튼시동");
+	}
+	
+}

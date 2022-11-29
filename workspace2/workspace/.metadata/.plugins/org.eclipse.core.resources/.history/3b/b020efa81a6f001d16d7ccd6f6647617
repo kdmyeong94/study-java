@@ -1,0 +1,34 @@
+package inheritance;
+
+public class Main2 {
+
+	public static void main(String[] args) {
+
+		Car momCar = new Car();
+		SuperCar myCar = new SuperCar();
+		
+//		momCar.setName("엄마");
+//		momCar.setColor("blue");
+//		momCar.setPrice(500);
+//		
+//		myCar.setName("홍길동");
+//		myCar.setColor("red");
+//		myCar.setPrice(5000);
+//		myCar.setMode("일반");
+		
+		// 객체가 어떤 타입인지 확인하는 방법
+		// instanceof
+		// 본인을 포함한 상위 클래스들이 맞는지 확인
+//		System.out.println(momCar instanceof Car); // true
+//		System.out.println(momCar instanceof SuperCar); // false
+//		
+//		System.out.println(myCar instanceof SuperCar); //true
+//		System.out.println(myCar instanceof Car); //true
+//		
+//		System.out.println(momCar instanceof Object); // true
+//		System.out.println(myCar instanceof Object); // true
+		
+		
+	}
+
+}
