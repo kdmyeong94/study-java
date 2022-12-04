@@ -1,0 +1,25 @@
+package game;
+
+public class Warrior extends Hero{
+	public Warrior() {
+		super("전사", 30, 10, 5, 15, 100);
+	}
+
+	@Override
+	public void skillAttack() {
+		if(!checkMp(3)) {
+			System.out.println("Mp 부족");
+			show();
+			return
+		}
+		super.skillAttack();
+	}
+
+	@Override
+	public void specialAttack() {
+		// TODO Auto-generated method stub
+		super.specialAttack();
+	}
+	
+	
+}

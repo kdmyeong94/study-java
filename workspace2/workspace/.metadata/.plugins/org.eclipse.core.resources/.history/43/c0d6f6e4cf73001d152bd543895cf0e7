@@ -1,0 +1,8 @@
+package game;
+
+public class Wizard extends Hero{
+	
+	public Wizard() {
+		super("마법사", 15, 30, 1, 30, 100);
+	}
+}

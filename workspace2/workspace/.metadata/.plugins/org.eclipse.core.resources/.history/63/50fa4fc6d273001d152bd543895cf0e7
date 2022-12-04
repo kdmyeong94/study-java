@@ -1,0 +1,26 @@
+package game;
+
+public class Pirate extends Hero{
+	public Pirate() {
+		super("해적", 20, 20, 3, 20, 100);
+	}
+
+	@Override
+	public void normalAttack() {
+		if(!checkMp(3)) {
+			System.out.println("마나 부족!");
+			show();
+			return;
+		}
+		System.out.println(name + "이 기본공격을 가했습니다.");
+		mp -= 3;
+	}
+
+	@Override
+	public void skillAttack() {
+		// TODO Auto-generated method stub
+		super.skillAttack();
+	}
+
+	
+}

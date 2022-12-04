@@ -1,0 +1,13 @@
+package game;
+
+public class SleepTest {
+
+	public static void main(String[] args) throws InterruptedException{
+		
+		System.out.println("시작");
+		Thread.sleep(2000);
+		System.out.println("끝!");
+		
+		
+	}
+}

@@ -1,0 +1,15 @@
+package game;
+
+public class Hero {
+
+	String name;
+	int hp;
+	int mp;
+	int max_hp;
+	int max_mp;
+	
+	int normal_attack;
+	int skill_attack;
+	int special_attack;
+	
+}

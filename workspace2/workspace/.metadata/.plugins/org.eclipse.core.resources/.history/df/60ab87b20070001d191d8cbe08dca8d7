@@ -1,0 +1,33 @@
+package game;
+
+public class Hero {
+
+	String name;		//이름
+	int hp;				//현재 체력
+	int mp;				//현재 마나
+	int max_hp;			//최대 체력
+	int max_mp;			//최대 마나
+	
+	int normal_attack;	//일반 공격력
+	int skill_attack;	//스킬 공격력
+	int special_attack;	//필살기 공격력
+	
+	public void normalAttack() {
+		System.out.println(name + "이(가) 기본공격을 실행했습니다.");
+		System.out.println("적에게 " + normal_attack + "만큼 피해를 입혔습니다.");
+		
+		System.out.println("--현재상태--");
+		System.out.println("hp : " + hp + "/" + max_hp);
+		System.out.println("mp : " + mp + "/" + max_mp);
+		System.out.println();
+		
+	}
+	
+	public void skillAttack() {
+		System.out.println(name + "이(가) 스킬공격을 실행했습니다.");
+		System.out.println("적에게 " + skill_attack + "만큼 피해를 입혔습니다.");
+		System.out.println("mp가 10만큼 줄어들었습니다.");
+		
+	}
+	
+}

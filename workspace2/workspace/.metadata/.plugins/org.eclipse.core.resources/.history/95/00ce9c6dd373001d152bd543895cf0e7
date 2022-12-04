@@ -1,0 +1,23 @@
+package game;
+
+public class Main {
+	
+	public static void main(String[] args) {
+//		
+//		Hero hero = new Hero("테스트", 10, 10, 20 , 20, 100);
+//		
+//		hero.normalAttack();
+//		hero.skillAttack();
+//		
+//		hero.specialAttack();
+		
+		Wizard wizard = new Wizard();
+		wizard.normalAttack();
+		wizard.skillAttack();
+		wizard.skillAttack();
+		wizard.skillAttack();
+		wizard.specialAttack();
+//		wizard.normalAttack();
+//		wizard.normalAttack();
+	}
+}

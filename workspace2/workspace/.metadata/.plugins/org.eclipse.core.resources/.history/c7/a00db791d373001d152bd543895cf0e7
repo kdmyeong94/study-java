@@ -1,0 +1,39 @@
+package game;
+
+import java.util.Scanner;
+
+public class Main {
+	
+	public static void main(String[] args) {
+//		
+//		Hero hero = new Hero("테스트", 10, 10, 20 , 20, 100);
+//		
+//		hero.normalAttack();
+//		hero.skillAttack();
+//		
+//		hero.specialAttack();
+		
+//		Wizard wizard = new Wizard();
+//		wizard.normalAttack();
+//		wizard.skillAttack();
+//		wizard.skillAttack();
+//		wizard.skillAttack();
+//		wizard.specialAttack();
+//		wizard.normalAttack();
+//		wizard.normalAttack();
+		
+		Scanner sc = new Scanner(System.in);
+		String mainMsg = "캐릭터 선택 \n"
+					+ "1. 마법사\n"
+					+ "2. 전사\n"
+					+ "그 외, 해적\n"
+					+ "입력 >> ";
+		String menuMsg = "1. 일반공격\n"
+				+ "2. 스킬공격\n"
+				+ "3. 특수공격\n"
+				+ "4. 종료";
+		int choice = 0;
+		System.out.println(mainMsg);
+		choice = sc.nextInt()
+	}
+}

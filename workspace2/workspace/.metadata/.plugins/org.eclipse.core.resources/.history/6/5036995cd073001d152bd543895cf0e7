@@ -1,0 +1,32 @@
+package game;
+
+public class Wizard extends Hero{
+	
+	public Wizard() {
+		super("마법사", 15, 30, 1, 30, 100);
+	}
+
+	@Override
+	public void normalAttack() {
+		hp -= 2;
+		super.normalAttack();
+		revive();
+	}
+
+	@Override
+	public void skillAttack() {
+		if(checkMp(10)) {
+			super.skillAttack();
+		} else {
+			System.out.println("마나 부족으로 스킬 사용 불가");
+		}
+		
+	}
+
+	@Override
+	public void specialAttack() {
+		super.specialAttack();
+	}
+	
+	
+}

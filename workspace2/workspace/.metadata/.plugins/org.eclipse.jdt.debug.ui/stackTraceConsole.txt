@@ -1,0 +1,13 @@
+	public void setMode(String mode) {
+		this.mode = mode;
+	}
+	
+	public String getMode() {
+		return mode;
+	}
+	
+	@Override
+	public void show() {
+		super.show(); // super : 해당 클래스의 부모 클래스를 의미한다. 여기서 super는 car 클래스를 바라본다.
+		System.out.println("모드 : " + getMode());
+	}

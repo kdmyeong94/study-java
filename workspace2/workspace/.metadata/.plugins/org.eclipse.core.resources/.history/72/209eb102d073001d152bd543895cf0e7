@@ -1,0 +1,26 @@
+package game;
+
+public class Wizard extends Hero{
+	
+	public Wizard() {
+		super("마법사", 15, 30, 1, 30, 100);
+	}
+
+	@Override
+	public void normalAttack() {
+		hp -= 2;
+		super.normalAttack();
+	}
+
+	@Override
+	public void skillAttack() {
+		super.skillAttack();
+	}
+
+	@Override
+	public void specialAttack() {
+		super.specialAttack();
+	}
+	
+	
+}

@@ -1,0 +1,7 @@
+package game;
+
+public class Pirate extends Hero{
+	public Pirate() {
+		super("해적", 20, 20, 3, 20, 100);
+	}
+}
