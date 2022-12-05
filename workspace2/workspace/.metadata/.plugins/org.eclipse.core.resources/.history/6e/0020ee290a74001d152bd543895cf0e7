@@ -1,0 +1,11 @@
+package InterfaceTest;
+
+public interface Soldier {
+
+	static final int a = 10;
+	int
+	
+	public void eat();
+	
+	public void work();
+}

@@ -1,0 +1,13 @@
+package abstractTest;
+
+public abstract class Animal {
+
+	String name;
+	
+	public void eat() {
+		System.out.println("밥을 맛있게 먹었다.");
+	}
+	
+	public abstract void cry();
+	
+}

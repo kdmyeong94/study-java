@@ -1,0 +1,6 @@
+package InterfaceTest;
+
+public class SoldierAdapter implements Soldier{
+	
+
+}

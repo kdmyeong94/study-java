@@ -1,0 +1,16 @@
+package abstractTest;
+
+public class Main {
+	public static void main(String[] args) {
+		
+		Cat cat = new Cat();
+		cat.cry();
+		cat.eat();
+		
+		Dog dog = new Dog();
+		dog.cry();
+		dog.eat();
+		
+		
+	}
+}
