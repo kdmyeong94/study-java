@@ -1,0 +1,14 @@
+package innerTest;
+
+public class Outer {
+	
+	int ov = 10;
+	
+	public void of() {
+		int a = 100;
+		
+		System.out.println(a);
+		System.out.println("일반 메서드");
+	}
+	
+}

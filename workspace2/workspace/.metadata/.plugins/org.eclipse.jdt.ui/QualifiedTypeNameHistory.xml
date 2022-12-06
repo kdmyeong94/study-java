@@ -9,11 +9,21 @@
     <fullyQualifiedTypeName name="day10.CallTest"/>
     <fullyQualifiedTypeName name="dto.Dto"/>
     <fullyQualifiedTypeName name="dto.Student"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.lang.Object"/>
     <fullyQualifiedTypeName name="inheritance.Car"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="inheritance.SuperCar"/>
     <fullyQualifiedTypeName name="java.lang.InterruptedException"/>
     <fullyQualifiedTypeName name="java.lang.Thread"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="game.Hero"/>
+    <fullyQualifiedTypeName name="game.Wizard"/>
+    <fullyQualifiedTypeName name="game.Pirate"/>
+    <fullyQualifiedTypeName name="game.Warrior"/>
+    <fullyQualifiedTypeName name="abstractTest.Cat"/>
+    <fullyQualifiedTypeName name="abstractTest.Dog"/>
+    <fullyQualifiedTypeName name="abstractTest.Animal"/>
+    <fullyQualifiedTypeName name="InterfaceTest.Test"/>
+    <fullyQualifiedTypeName name="InterfaceTest.Soldier"/>
+    <fullyQualifiedTypeName name="InterfaceTest.SoldierAdapter"/>
 </qualifiedTypeNameHistroy>

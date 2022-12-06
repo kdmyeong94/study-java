@@ -1,0 +1,38 @@
+package innerTest;
+
+public class Outer {
+	
+	int ov = 10;
+	
+	class InnerInstance{
+		int iiv = 20;
+		
+		public void iif() {
+			System.out.println("InnerInstance 클래스 속의 메서드");
+		}
+	}
+	
+	
+	
+	// 지역 클래스
+	public void of() {
+
+		
+		class InnerLocal{ // 지역 클래스 : 해당 메서드 내부에서만 사용 할 수 있다.
+			int liv = 40;
+			
+			public void hi() {
+				System.out.println("InnerLocal클래스 속의 메서드");
+			}
+			
+		}
+		
+		InnerLocal il = new InnerLocal();
+		System.out.println(il.liv);
+		il.hi();
+
+		System.out.println("일반 메서드");
+		
+	}
+	
+}

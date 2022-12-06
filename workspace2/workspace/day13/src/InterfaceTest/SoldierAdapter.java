@@ -9,7 +9,7 @@ public abstract class SoldierAdapter implements Soldier{
 	}
 
 	@Override
-	public void work() {
+	public void salute() {
 		// TODO Auto-generated method stub
 		
 	}

@@ -1,0 +1,13 @@
+package InterfaceTest;
+
+public interface Soldier {
+
+	static final int a = 10; // interface에는 무조건 static final로 생성해야함
+	int b = 10; // static final 이 있으나 생략됨
+	
+	public void eat();
+	
+	public void work();
+	
+	public abstract void salute();
+}

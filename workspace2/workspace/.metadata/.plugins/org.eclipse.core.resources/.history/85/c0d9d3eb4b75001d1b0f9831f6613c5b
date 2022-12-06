@@ -1,0 +1,22 @@
+package InterfaceTest;
+
+public class Soldier2 implements Soldier{
+
+	@Override
+	public void eat() {
+		System.out.println("식사하기");
+	}
+
+	@Override
+	public void work() {
+		System.out.println("작업하기");
+		
+	}
+
+	@Override
+	public void salute() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

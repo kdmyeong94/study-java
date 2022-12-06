@@ -32,5 +32,8 @@ public class Warrior extends Hero{
 		revive();
 	}
 	
+	public void onlyWarrior() {
+		System.out.println("위대한 전사가 게임을 종료합니다.");
+	}
 	
 }
