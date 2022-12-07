@@ -1,0 +1,51 @@
+package stringTest;
+
+import java.util.Scanner;
+
+public class StringTask {
+	
+	public static void main(String[] args) {
+		
+	// 1. 사용자에게 문자열로 암호를 입력받아서
+	// 암호화, 복호화를 진행
+	
+	
+	
+	// "abcd" 입력받음
+	// 'a', 'b', 'c', 'd'  => char[]
+	// 67, 68, 69, 70 > int 변환
+	// * 5
+	// 335, 340, 345, 350 
+	// > char 형태로 바꾸면?
+	// 알수 없는 문자로 표기.
+	// 암호화 진행
+		
+		final int KEY = 5;
+
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("pw >> ");
+		String pw = sc.nextLine(); // abcd
+
+		String en_pw = "";
+		// 입력받은 비밀번호를 알아 볼 수 없게 암호화해서 출력
+		for(int i = 0; i< pw.length(); i++) {
+			en_pw += (char)(pw.charAt(i) * KEY);
+		}
+		
+		System.out.println(en_pw);
+	
+		
+		// 복호화 진행
+		// 암호화된 char 형을 다시 int로 변환
+		// 변환된 int 에 /5 진행
+		// 67, 68, 69 ,70
+		// > char 형으로 변환
+		// 'a', 'b', 'c', 'd'
+		String de_pw = "";
+		for(int i= 0; i<en_pw.length(); i++) {
+			de_pw += (char)(en_pw.charAt(i)/KEY);
+		}
+		System.out.println(de_pw);
+	}
+}

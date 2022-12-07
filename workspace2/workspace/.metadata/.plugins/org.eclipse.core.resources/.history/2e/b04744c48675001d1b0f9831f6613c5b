@@ -1,0 +1,15 @@
+package wrapperTest;
+
+public class WrapperTest {
+
+	public static void main(String[] args) {
+		
+		int num1 = 10;
+		// 권장하지 않는다는 표시
+		Integer num2 = new Integer(10);
+	
+		
+		
+	}
+	
+}

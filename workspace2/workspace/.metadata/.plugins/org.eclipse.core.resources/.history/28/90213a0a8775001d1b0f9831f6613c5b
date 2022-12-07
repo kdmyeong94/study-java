@@ -1,0 +1,36 @@
+package wrapperTest;
+
+public class WrapperTest {
+
+	public static void main(String[] args) {
+		
+		int num1 = 10;
+		// 권장하지 않는다는 표시
+		Integer num2 = new Integer(10);
+		int num3 = 10;
+		Integer num4 = new Integer(10);
+	
+		String str1 = new String("홍길동");
+		String str2 = "홍길동";
+		
+		System.out.println(num1);
+		System.out.println(num2);
+		System.out.println(str1);
+		System.out.println(str2);
+		
+		System.out.println(num2.toString());
+		
+		System.out.println("-----------------------");
+		System.out.println(num1==num3); //true
+		System.out.println(num2==num4); //false
+		System.out.println(num2.equals(num4)); // true
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+}

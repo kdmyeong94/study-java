@@ -1,0 +1,15 @@
+package day14;
+
+public class Main {
+
+	public static void main(String[] args) {
+	
+		Car c1 = new Car("홍길동", 1515);
+		Car c2 = new Car("김철수", 2222);
+		Car c3 = new Car("홍길동", 1515);
+		Car c4 = new Car("김철수", 1717);
+		
+	}
+	
+	
+}

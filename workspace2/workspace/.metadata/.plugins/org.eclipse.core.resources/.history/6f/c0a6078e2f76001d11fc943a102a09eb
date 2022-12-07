@@ -1,0 +1,102 @@
+package stringTest;
+
+import java.util.Scanner;
+
+public class StringTask {
+	
+	public static void main(String[] args) {
+		
+	// 1. 사용자에게 문자열로 암호를 입력받아서
+	// 암호화, 복호화를 진행
+	
+	
+	
+	// "abcd" 입력받음
+	// 'a', 'b', 'c', 'd'  => char[]
+	// 67, 68, 69, 70 > int 변환
+	// * 5
+	// 335, 340, 345, 350 
+	// > char 형태로 바꾸면?
+	// 알수 없는 문자로 표기.
+	// 암호화 진행
+		
+//		final int KEY = 5;
+
+		Scanner sc = new Scanner(System.in);
+		
+//		System.out.println("pw >> ");
+//		String pw = sc.nextLine(); // abcd
+//
+//		String en_pw = "";
+//		// 입력받은 비밀번호를 알아 볼 수 없게 암호화해서 출력
+//		for(int i = 0; i< pw.length(); i++) {
+//			en_pw += (char)(pw.charAt(i) * KEY);
+//		}
+//		
+//		System.out.println(en_pw);
+	
+		
+		// 복호화 진행
+		// 암호화된 char 형을 다시 int로 변환
+		// 변환된 int 에 /5 진행
+		// 67, 68, 69 ,70
+		// > char 형으로 변환
+		// 'a', 'b', 'c', 'd'
+//		String de_pw = "";
+//		for(int i= 0; i<en_pw.length(); i++) {
+//			de_pw += (char)(en_pw.charAt(i)/KEY);
+//		}
+//		System.out.println(de_pw);
+		
+		
+		
+		/*
+		 *  2. 사용자에게 문자열을 입력받아
+		 *  대문자는 소문자로, 소문자는 대문자로, 그외의 문자는 그대로 반영하여 출력하시오
+		 */
+		
+//		System.out.println("입력 >> ");
+//		String input = sc.nextLine();
+//		
+//		String result ="";
+//		for(int i = 0; i <input.length(); i++) {
+//			char ch = input.charAt(i);
+//			if( ch >= 'A' && ch <='Z') { // 대문자라면
+//				result += (char)(ch + 32); // 소문자로 바꾸어 result에 연결
+//			} else if(ch >= 'a' && ch <= 'z') { // 소문자
+//				result += (char)(ch - 32); // 대문자로 바꾸어 result에 연결
+//			} else { // 대문자 x, 소문자 x
+//				result += ch;
+//			}
+//		}
+//		
+//		System.out.println("입력 받은 문자 : " + input);
+//		System.out.println("변경된 문자 : " + result);
+//		
+		/*
+		 * 3. 사용자에게 노래순위ㅡ 노래제목, 가수 정보 모두 ,로 구분하여 한줄로 입력받는다.
+		 * 그리고 원래 노래순위에다 10을 더하여 다시 띄어쓰기로 연결하고 한줄로 출력하기
+		 * 
+		 * ex)
+		 * 입력 > 15, 좋은날, 아이유
+		 * 출력 > 25, 좋은날, 아이유
+		 */
+		
+		
+		/*
+		 * 4. 사용자에게 한글로 문자열을 입력받아서
+		 * 해당 문자열을 숫자로 변경하여 출력하시오
+		 * 단, 공 ~ 구까지의 숫자만 나옵니다.
+		 * 일공이삼
+		 * 1023
+		 */
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+}

@@ -1,0 +1,23 @@
+package stringTest;
+
+public class StringTest {
+
+	public static void main(String[] args) {
+		
+		String str = "Hello java hi";
+		
+		// 1. length() : 해당 문자열의 길이를 return
+		System.out.println(str.length());
+	
+		// 2. charAt(인덱스) : 해당 문자열에서 인덱스에 위치한 char값을 return
+		System.out.println(str.charAt(3));
+		
+		// 3. indexOf ( 요소 ) : 앞에서부터 요소가 등장한 인덱스 번호를 return
+		// indexOf ( 요소, 찾기 시작할 위치 : 해당 위치로부터 요소를 찾아 등장한 위치를 return
+		System.out.println(str.indexOf("j"));
+		System.out.println(str.indexOf('a'));
+		System.out.println(str.indexOf(97));
+		
+		
+	}
+}

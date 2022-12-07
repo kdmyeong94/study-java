@@ -1,0 +1,13 @@
+package day14;
+
+public class Car {
+
+	String name;
+	int carNum;
+	public Car(String name, int carNum) {
+		super();
+		this.name = name;
+		this.carNum = carNum;
+	}
+	
+}

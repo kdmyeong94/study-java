@@ -1,0 +1,24 @@
+package day14;
+
+import api.Calculator;
+import innerTest.Outer;
+
+public class Method {
+
+	public void f1(String a) {
+		// String을 활용하는 코드
+	}
+	
+	public void f1(Car c) {
+		
+	}
+	
+	public void f1(Calculator c) {
+		
+	}
+	
+	public void f1(Outer o) {
+		
+	}
+	
+}
