@@ -2,9 +2,6 @@ package project;
 
 public class CosmeticMen {
 
-
-	
-	
 	public String toner1(int a) {  //건조한 정도를 정수값으로 받아와서 해당 토너 정하기
 		
 		String[] cos = {"토너1","토너2","토너3","토너4","토너5"}; // 토너 종류
