@@ -36,7 +36,15 @@ public class ListTask {
 				System.out.println("이름 : ");
 				String name = sc.nextLine();
 				System.out.println("나이 : ");
-				int age = Integer.parseInt(sc.nextLine());
+				int age;
+				
+				try {
+					age = Integer.parseInt(sc.nextLine());
+				} catch (NumberFormatException e) {
+					e.printStackTrace();
+					System.out.println("나이에는 숫자만 입력해 주세요.");
+					break;
+				}
 				
 				// ArrayList 속에 id가 지금 회원가입하고자 하는
 				// id랑 중복된다면 회원가입 실패
@@ -95,6 +103,25 @@ public class ListTask {
 				
 				
 			} else if (choice == 3) { // 회원정보 입력
+				
+				boolean isUser = false;
+				System.out.println("id : ");
+				String id = sc.nextLine();
+				
+				for( User user : members) {
+					if(user.getId().equals(id)) {
+						System.out.println("--회원정보--");
+						System.out.println("이름 : " + user.getName());
+						System.out.println("나이 : " + user.getAge());
+						isUser = true;
+						break;
+					}
+				}
+				
+				// 검색 결과 없을 때 
+				if(!isUser) {
+					System.out.println("검색 결과가 존재하지 않습니다.");
+				}
 				
 			} else if (choice == 4) { //나가기
 				System.out.println("감사합니다.");
